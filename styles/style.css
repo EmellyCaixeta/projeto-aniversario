@@ -1,0 +1,229 @@
+:root {
+    --fonte-primaria: 'Georgia', sans-serif;
+}
+
+/* Reset básico */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-primaria);
+}
+
+body {
+    box-sizing: border-box;
+    background-image: url("../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Área principal */
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    gap: 20px;
+}
+
+/* Caixa de conteúdo */
+.apresentacao__conteudo {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Efeito ao passar o mouse */
+.apresentacao__conteudo:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo especial da carta (usado só em textocarta.html) */
+.decorada {
+    border: 2px dashed pink;
+}
+
+.decorada::before,
+.decorada::after {
+    content: "♡";
+    font-size: 48px;
+    color: pink;
+    position: absolute;
+}
+.decorada::before {
+    top: -25px;
+    left: -20px;
+}
+.decorada::after {
+    bottom: -25px;
+    right: -20px;
+}
+
+.decorada .apresentacao__conteudo__texto {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/* Elementos internos */
+.apresentacao__conteudo__titulo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.apresentacao__conteudo__imagem {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imagem-simples {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1rem;
+    font-family: var(--fonte-primaria);
+    margin-top: 20px;
+    text-align: center; /* antes estava justify */
+}
+
+
+/* Links */
+.apresentacao__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.apresentacao__links__navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e469a6;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background-color: #ed7eb5;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.apresentacao__links__navegacao:hover {
+    background-color: #ed7eb5;
+    transform: scale(1.05);
+}
+
+.apresentacao__links__navegacao img {
+    width: 28px;
+    height: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+/* Botão de música */
+.botao-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.botao-musica:hover {
+    transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .apresentacao {
+        padding: 0 5%;
+    }
+
+    .apresentacao__conteudo {
+        padding: 30px;
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 1.4rem;
+    }
+
+    .apresentacao__conteudo__imagem {
+        width: 220px;
+    }
+
+    .apresentacao__conteudo__texto {
+        font-size: 0.95rem;
+    }
+
+    .apresentacao__links__navegacao {
+        width: 80%;
+        font-size: 1.1rem;
+    }
+
+    .apresentacao__links__navegacao img {
+        width: 30px;
+        height: auto;
+    }
+}
+
+@media (max-width: 355px) {
+    .apresentacao__conteudo {
+        padding: 20px;
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 1.2rem;
+    }
+
+    .apresentacao__conteudo__imagem {
+        width: 180px;
+    }
+
+    .apresentacao__conteudo__texto {
+        font-size: 0.9rem;
+    }
+
+    .apresentacao__links__navegacao {
+        width: 90%;
+        font-size: 1rem;
+        padding: 6px;
+    }
+
+    .apresentacao__links__navegacao img {
+        width: 24px;
+        height: auto;
+    }
+}
